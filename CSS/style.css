@@ -1,10 +1,13 @@
 body {
   font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 /* -------------------HEADER---------------------- */
 header {
   width: 95%;
-  margin: 40px 40px 20px 40px;
+  margin: 0 40px 20px 40px;
+  max-width: 1360px;
 }
 .logo {
   display: flex;
@@ -13,12 +16,15 @@ header {
 .logo img {
   height: 50px;
   object-fit: cover;
+  margin-top: 20px;
 }
-/* METTRE LA BORDER ENCORE PLUS HAUT */
+/* METTRE LA BORDER ENCORE PLUS HAUT mmm */
 .logo ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  height: 40px;
 }
 .logo li {
   display: inline;
@@ -26,13 +32,17 @@ header {
 .logo a {
   text-decoration: none;
   margin: 30px;
+  line-height: 80px;
 }
 .link_header a {
   color: black;
 }
-.link_header a:hover {
+.link_header li:hover {
   color: #0065fc;
   border-top: 2px solid #0065fc;
+}
+.link_header a:hover {
+  color: #0065fc;
 }
 .header_title h1 {
   margin-top: 30px;
@@ -67,7 +77,7 @@ form i {
   right: 4px;
 }
 #search_button {
-  padding: 10px;
+  padding: 11px;
   font-size: 15px;
   background-color: #0065fc;
   color: white;
@@ -77,6 +87,12 @@ form i {
   font-weight: bold;
   position: relative;
   right: 9px;
+}
+#search_button:active {
+  background-color: #023f9b;
+}
+#search_button i {
+  display: none;
 }
 /* -------------------------FILTRE---------------------- */
 .filter {
@@ -92,15 +108,17 @@ form i {
   display: inline;
 }
 .filter a {
+  display: inline-flex;
   text-decoration: none;
-  margin: 10px;
   font-weight: bold;
   border: 2px solid rgba(128, 128, 128, 0.295);
   border-left: none;
   color: black;
   border-radius: 30px;
-  display: inline-block;
-  padding-right: 20px;
+  height: 41px;
+  align-items: center;
+  padding: 0 15px 0 0;
+  margin: 10px 0 0 20px;
 }
 .filter a:hover {
   background-color: #0065fc;
@@ -109,9 +127,11 @@ form i {
 .filter i {
   color: #0065fc;
   background-color: #deebff;
-  padding: 10px 10px;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-right: 10px;
+  padding: 15px;
+  position: relative;
+  right: 1px;
 }
 .info {
   margin-bottom: 0;
@@ -129,13 +149,15 @@ main {
   display: flex;
   width: 95%;
   margin: 0 40px 20px 40px;
+  max-width: 1360px;
 }
 .accommodation {
   background-color: #f2f2f2;
   padding: 3%;
+  margin-right: 2%;
   border-radius: 20px;
-  width: 66%;
   order: 1;
+  flex: 2;
 }
 .accommodation h2 {
   font-size: 20px;
@@ -146,26 +168,30 @@ main {
   background-color: white;
   border-radius: 20px;
   padding: 1%;
-  margin: 1%;
+  margin: 2%;
   box-shadow: 2px 5px 10px lightgray;
+  width: 25%;
 }
 .hotel a {
   text-decoration: none;
   color: black;
 }
 .hotel:hover {
-  background-color: lightblue;
+  background-color: #deebff;
 }
 .picture img {
   object-fit: cover;
   height: 100px;
-  width: 200px;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .picture {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .container h3 {
   margin: 0;
@@ -190,11 +216,11 @@ main {
 }
 /* -------------------LES PLUS POPULAIRES-------------- */
 aside {
-  width: 32%;
   background-color: #f2f2f2;
   padding: 3%;
   border-radius: 20px;
   order: 2;
+  flex: 1;
 }
 .aside_title {
   display: flex;
@@ -227,12 +253,13 @@ aside .popular_hotel {
   color: black;
 }
 .popular_hotel:hover {
-  background-color: lightblue;
+  background-color: #deebff;
 }
-.text {
+.description {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  justify-content: space-around;
+  padding-left: 15px;
 }
 .text h3 {
   margin: 0;
@@ -253,6 +280,7 @@ aside .popular_hotel {
   margin: 0;
   width: 95%;
   margin: 40px 40px;
+  max-width: 1360px;
 }
 #activity_marseille > h2 {
   font-size: 20px;
@@ -272,10 +300,10 @@ aside .popular_hotel {
 .activity3 h2,
 .activity4 h2 {
   font-weight: bold;
-  margin-left: 10%;
+  margin-left: 20px;
 }
 .activity1 {
-  width: 25%;
+  flex: 1;
   height: 400px;
   background-color: #f8f8ff;
   border-radius: 20px;
@@ -290,7 +318,7 @@ aside .popular_hotel {
   border-top-right-radius: 20px;
 }
 .activity2 {
-  width: 25%;
+  flex: 1;
   height: 400px;
   border-radius: 20px;
   margin-right: 3%;
@@ -323,7 +351,7 @@ aside .popular_hotel {
   border-top-right-radius: 20px;
 }
 .activity3 {
-  width: 25%;
+  flex: 1;
   height: 400px;
   background-color: #f8f8ff;
   border-radius: 20px;
@@ -338,7 +366,7 @@ aside .popular_hotel {
   border-top-right-radius: 20px;
 }
 .activity4 {
-  width: 25%;
+  flex: 1;
   height: 400px;
   justify-content: space-between;
 }
@@ -369,6 +397,14 @@ aside .popular_hotel {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+.activity1:hover,
+.fort:hover,
+.ile:hover,
+.activity3:hover,
+.notre_dame:hover,
+.parc_longchamp:hover {
+  background-color: #deebff;
+}
 /* -------------FOOTER------------------- */
 footer {
   display: flex;
@@ -376,9 +412,10 @@ footer {
   justify-content: space-between;
   background-color: #f2f2f2;
   margin-top: 40px;
+  max-width: 1500px;
 }
 footer ul {
-  width: 33%;
+  flex: 1;
   list-style-type: none;
   padding: 0;
   margin: 40px 40px;
@@ -390,11 +427,22 @@ footer h2 {
 footer li {
   margin-bottom: 10px;
 }
+footer a {
+  text-decoration: none;
+  color: black;
+}
 /* -----------------------------------------Tablette--------------------------------------------- */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) and (min-width: 768px) {
   main {
     flex-direction: column;
     margin: 0;
+  }
+  .filter a {
+    display: inline-flex;
+    height: 41px;
+    align-items: center;
+    padding: 0 15px 0 0;
+    margin: 10px 0 0 20px;
   }
   aside {
     order: 1;
@@ -413,45 +461,65 @@ footer li {
     width: 100%;
   }
   #activity_marseille {
-    margin: 0 0 0 10px;
-    height: 1100px;
+    margin: 0;
+    width: 100%;
   }
   .photo {
     flex-direction: column;
   }
   .activity1,
-  .activity2,
-  .activity3,
-  .activity4 {
-    width: 100%;
+  .activity3 {
     height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
-  #vieux_port {
-    height: 150px;
+  .activity2,
+  .activity4 {
+    height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
-  #fort {
-    height: 150px;
+  #ancre2 {
+    margin-left: 20px;
   }
-  #ile {
-    height: 150px;
-  }
-  #parc_national {
-    height: 150px;
-  }
-  #notre_dame {
-    height: 150px;
-  }
+  #vieux_port,
+  #fort,
+  #ile,
+  #parc_national,
+  #notre_dame,
   #parc_longchamp {
     height: 150px;
+  }
+  .activity1,
+  .fort,
+  .ile,
+  .activity3,
+  .notre_dame,
+  .parc_longchamp {
+    margin-top: 20px;
+  }
+  .fort,
+  .ile,
+  .notre_dame,
+  .parc_longchamp {
+    height: 200px;
+  }
+  footer {
+    flex-direction: column;
+    width: 100%;
+  }
+  footer ul {
+    margin-top: 20px;
+    margin-left: 20px;
   }
 }
 
 /* ---------------------------------------------------Mobile------------------------------------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   header {
     margin: 0;
+    width: 100%;
   }
-  /* Hebergements et activités A REFAIRE */
   .logo {
     flex-direction: column;
     align-items: center;
@@ -459,84 +527,164 @@ footer li {
   .logo img {
     height: 40px;
     width: 60px;
-    margin: 20px 0;
+    margin-top: 10px;
   }
-  .logo li {
+  .link_header {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .link_header li {
+    height: 40px;
+    width: 50%;
+    text-align: center;
+  }
+  .link_header a {
+    line-height: 40px;
     margin: 0;
-    border-bottom: 1px solid #0065fc;
+  }
+  .link_header li:hover {
+    border-top: none;
+    border-bottom: 2px solid #0065fc;
   }
   .header_title {
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-left: 20px;
   }
-  /* CHANGER LE BOUTON rechercher PAR UNE LOUPE */
-  /* METTRE LES FILTRES SOUS LE MOT FILTRE */
-  .filter {
-    margin-left: 10px;
+  form {
+    text-align: center;
   }
-  /* -----Trouve une meilleure solution pour <.info i> ------------------ */
-  .info i {
-    float: left;
+  form i {
+    top: 2px;
+  }
+  #search_button {
+    padding: 0;
+  }
+  #search_button i:active {
+    background-color: #023f9b;
+  }
+  #search_button span {
+    display: none;
+  }
+  #search_button i {
+    display: initial;
+    background-color: #0065fc;
+    color: white;
     position: relative;
-    bottom: 20px;
+    border-radius: 10px;
+    padding: 13px;
+  }
+
+  #filter_title {
+    display: flex;
+    width: 90%;
+    margin-left: 20px;
+  }
+  .filter a {
+    display: inline-flex;
+    height: 41px;
+    align-items: center;
+    padding: 0 15px 0 0;
+    margin: 10px 0 0 20px;
+  }
+  .info {
+    display: flex;
+  }
+  .info i {
+    margin: 0 0 20px 10px;
+  }
+  .info span {
+    margin-left: 10px;
   }
   main {
     flex-direction: column;
     margin: 0;
+    width: 100%;
   }
   aside {
     order: 1;
-    width: 100%;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-radius: 0;
+  }
+  .aside_title {
+    padding-right: 10px;
+  }
+  aside img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .accommodation {
     order: 2;
-    width: 100%;
     margin: 0;
+    background-color: initial;
+    margin-top: 20px;
+    border-radius: 0;
   }
-
+  #ancre1 {
+    padding-left: 5px;
+  }
   .hotel {
     width: 100%;
   }
   .hotel img {
     width: 100%;
   }
+  .container {
+    padding-left: 15px;
+  }
+  .icon {
+    padding-left: 15px;
+  }
   #activity_marseille {
-    margin: 0 0 0 10px;
-    height: 1100px;
+    margin: 0;
+    width: 100%;
   }
   .photo {
     flex-direction: column;
   }
   .activity1,
-  .activity2,
-  .activity3,
-  .activity4 {
-    width: 100%;
+  .activity3 {
     height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
-  #vieux_port {
-    height: 150px;
+  .activity2,
+  .activity4 {
+    height: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
-  #fort {
-    height: 150px;
+  #ancre2 {
+    margin-left: 20px;
   }
-  #ile {
-    height: 150px;
-  }
-  #parc_national {
-    height: 150px;
-  }
-  #notre_dame {
-    height: 150px;
-  }
+  #vieux_port,
+  #fort,
+  #ile,
+  #parc_national,
+  #notre_dame,
   #parc_longchamp {
     height: 150px;
   }
+  .activity1,
+  .fort,
+  .ile,
+  .activity3,
+  .notre_dame,
+  .parc_longchamp {
+    margin-top: 20px;
+  }
+  .fort,
+  .ile,
+  .notre_dame,
+  .parc_longchamp {
+    height: 200px;
+  }
   footer {
     flex-direction: column;
+    width: 100%;
   }
   footer ul {
-    width: 99%;
-    margin: 20px 0;
-    padding-left: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
 }
