@@ -1,3 +1,9 @@
+:root {
+  --main-color: #0065fc;
+  --second-color: #f2f2f2;
+  --filter-color: #deebff;
+  --card-color: #a5bbdd;
+}
 body {
   font-family: "Raleway", sans-serif;
   display: flex;
@@ -9,47 +15,54 @@ header {
   margin: 0 40px 20px 40px;
   max-width: 1360px;
 }
-.logo {
+.header_logo {
   display: flex;
   justify-content: space-between;
 }
-.logo img {
+.header_logo img {
   height: 50px;
   object-fit: cover;
   margin-top: 20px;
 }
-.logo ul {
+.header_logo ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
   height: 40px;
 }
-.logo li {
+.header_logo li {
   display: inline;
 }
-.logo a {
+.header_logo a {
   text-decoration: none;
   margin: 30px;
   line-height: 80px;
 }
-.link_header a {
-  color: black;
+.header_nav a {
+  color: #000;
 }
-.link_header li:hover {
-  color: #0065fc;
-  border-top: 2px solid #0065fc;
+.header_nav li:hover {
+  color: var(--main-color);
+  border-top: 2px solid var(--main-color);
 }
-.link_header a:hover {
-  color: #0065fc;
+.header_nav a:hover {
+  color: var(--main-color);
 }
-.header_title h1 {
+/* -----------MAIN--------------------------- */
+main {
+  max-width: 1360px;
+}
+.zero {
+  margin: 0 40px 20px 40px;
+}
+.zero_title h1 {
   margin-top: 30px;
   margin-bottom: 8px;
   font-weight: bold;
   font-size: 20px;
 }
-.header_title h2 {
+.zero_title h2 {
   margin: 0;
   padding: 0;
   font-size: 15px;
@@ -63,14 +76,14 @@ form i {
   padding: 12px;
   position: relative;
   top: 1px;
-  background-color: #f2f2f2;
+  background-color: var(--second-color);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 15px;
 }
 #search_bar {
   padding: 10px;
   font-size: 15px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--second-color);
   font-weight: bold;
   position: relative;
   right: 4px;
@@ -78,11 +91,11 @@ form i {
 #search_button {
   padding: 11px;
   font-size: 15px;
-  background-color: #0065fc;
-  color: white;
+  background-color: var(--main-color);
+  color: #fff;
   border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   font-weight: bold;
   position: relative;
   right: 9px;
@@ -112,7 +125,7 @@ form i {
   font-weight: bold;
   border: 2px solid rgba(128, 128, 128, 0.295);
   border-left: none;
-  color: black;
+  color: #000;
   border-radius: 30px;
   height: 41px;
   align-items: center;
@@ -120,38 +133,42 @@ form i {
   margin: 10px 0 0 20px;
 }
 .filter a:hover {
-  background-color: #0065fc;
-  color: white;
+  background-color: var(--main-color);
+  color: #fff;
 }
 .filter i {
-  color: #0065fc;
-  background-color: #deebff;
+  color: var(--main-color);
+  background-color: var(--filter-color);
   border-radius: 30px;
   margin-right: 10px;
+  height: 15px;
+  width: 15px;
   padding: 15px;
   position: relative;
   right: 1px;
+  display: flex;
+  justify-content: center;
 }
+/* --------INFO------------ */
 .info {
   margin-bottom: 0;
 }
 .info i {
   margin: 20px 10px 0 0;
-  color: #0065fc;
+  color: var(--main-color);
   border: 1px solid rgba(128, 128, 128, 0.295);
   border-radius: 20px;
   padding: 5px 10px;
   font-size: 15px;
 }
 /* ----------------HEBERGEMENT----------------------- */
-main {
+.marseille_hotels {
   display: flex;
   width: 95%;
   margin: 0 40px 20px 40px;
-  max-width: 1360px;
 }
 .accommodation {
-  background-color: #f2f2f2;
+  background-color: var(--second-color);
   padding: 3%;
   margin-right: 2%;
   border-radius: 20px;
@@ -160,23 +177,23 @@ main {
 }
 .accommodation h2 {
   font-size: 20px;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 10px;
 }
 .hotel {
   display: inline-block;
-  background-color: white;
+  background-color: #fff;
   border-radius: 20px;
   padding: 1%;
-  margin: 2%;
+  margin: 1%;
   box-shadow: 2px 5px 10px lightgray;
-  width: 25%;
+  width: 28%;
+}
+.hotel:hover {
+  background-color: var(--card-color);
 }
 .hotel a {
   text-decoration: none;
-  color: black;
-}
-.hotel:hover {
-  background-color: #deebff;
+  color: #000;
 }
 .picture {
   margin: 0;
@@ -202,7 +219,7 @@ main {
 }
 .icon {
   font-size: 12px;
-  color: #0065fc;
+  color: var(--main-color);
   margin: 5px 0 3px 0;
 }
 #more {
@@ -210,49 +227,49 @@ main {
 }
 #more a {
   text-decoration: none;
-  color: black;
+  color: #000;
   font-weight: bold;
 }
 /* -------------------LES PLUS POPULAIRES-------------- */
-aside {
-  background-color: #f2f2f2;
+.plus_populaires {
+  background-color: var(--second-color);
   padding: 3%;
   border-radius: 20px;
   order: 2;
   flex: 1;
 }
-.aside_title {
+.plus_populaires_title {
   display: flex;
   justify-content: space-between;
+  margin-right: 10px;
 }
-.aside_title h2 {
+.plus_populaires_title h2 {
   font-size: 20px;
   margin: 0;
   margin: 0 0 10px 10px;
 }
-aside img {
+.plus_populaires img {
   object-fit: cover;
   height: 120px;
   width: 120px;
+  min-width: 120px;
   border-radius: 20px 0 0 20px;
 }
-aside .popular_hotel {
-  background-color: white;
+.popular_hotel {
+  background-color: #fff;
   border-radius: 20px;
   margin: 10px;
   display: flex;
-  box-shadow: 1px 1px 10px gray;
-}
-.popular_hotel {
+  box-shadow: 1px 1px 10px #dcdcdc;
   padding: 1%;
+}
+.popular_hotel:hover {
+  background-color: var(--card-color);
 }
 .popular_hotel a {
   text-decoration: none;
   display: flex;
-  color: black;
-}
-.popular_hotel:hover {
-  background-color: #deebff;
+  color: #000;
 }
 .description {
   display: flex;
@@ -270,18 +287,17 @@ aside .popular_hotel {
   font-size: 13px;
 }
 .icon2 {
-  color: #0065fc;
+  color: var(--main-color);
   font-size: 12px;
 }
 
 /* ----------------------------ACTIVITES------------------- */
-#activity_marseille {
+.activity_marseille {
   margin: 0;
   width: 95%;
   margin: 40px 40px;
-  max-width: 1360px;
 }
-#activity_marseille > h2 {
+.activity_marseille > h2 {
   font-size: 20px;
 }
 .photo {
@@ -292,7 +308,7 @@ aside .popular_hotel {
 }
 .photo h2 {
   font-size: 15px;
-  color: black;
+  color: #000;
 }
 .activity1 h2,
 .activity2 h2,
@@ -301,7 +317,8 @@ aside .popular_hotel {
   font-weight: bold;
   margin-left: 20px;
 }
-.activity1 {
+.activity1,
+.activity3 {
   flex: 1;
   height: 400px;
   background-color: #f8f8ff;
@@ -349,14 +366,6 @@ aside .popular_hotel {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.activity3 {
-  flex: 1;
-  height: 400px;
-  background-color: #f8f8ff;
-  border-radius: 20px;
-  margin-right: 3%;
-  border: 1px solid rgba(0, 0, 0, 0.144);
-}
 #parc_national {
   height: 350px;
   width: 100%;
@@ -402,14 +411,14 @@ aside .popular_hotel {
 .activity3:hover,
 .notre_dame:hover,
 .parc_longchamp:hover {
-  background-color: #deebff;
+  background-color: var(--card-color);
 }
 /* -------------FOOTER------------------- */
 footer {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background-color: #f2f2f2;
+  background-color: var(--second-color);
   margin-top: 40px;
   max-width: 1500px;
 }
@@ -428,14 +437,20 @@ footer li {
 }
 footer a {
   text-decoration: none;
-  color: black;
+  color: #000;
 }
 /* -----------------------------------------Tablette--------------------------------------------- */
 @media screen and (max-width: 992px) and (min-width: 768px) {
-  main {
-    flex-direction: column;
-    margin: 0;
+  /* ----------HEADER TABLETTE----------------- */
+  header {
+    width: 90%;
   }
+  /* ---------------MAIN TABLETTE--------------- */
+  main {
+    margin: 0;
+    width: 99%;
+  }
+  /* ---------------FILTER TABLETTE---------------------------- */
   .filter a {
     display: inline-flex;
     height: 41px;
@@ -443,7 +458,12 @@ footer a {
     padding: 0 15px 0 0;
     margin: 10px 0 0 20px;
   }
-  aside {
+  /* ------------------- HERBERGEMENT TABLETTE------------------*/
+  .marseille_hotels {
+    flex-direction: column;
+    margin: 0;
+  }
+  .plus_populaires {
     order: 1;
     width: 100%;
   }
@@ -452,16 +472,19 @@ footer a {
     width: 100%;
     margin: 0;
   }
-
   .hotel {
-    width: 100%;
+    width: 45%;
   }
   .hotel img {
     width: 100%;
   }
-  #activity_marseille {
+  /* ----------------ACTIVITES TABLETTE------------------------ */
+  .activity_marseille {
     margin: 0;
     width: 100%;
+  }
+  #ancre2 {
+    margin-left: 20px;
   }
   .photo {
     flex-direction: column;
@@ -477,9 +500,6 @@ footer a {
     height: 400px;
     margin-left: 20px;
     margin-right: 20px;
-  }
-  #ancre2 {
-    margin-left: 20px;
   }
   #vieux_port,
   #fort,
@@ -503,8 +523,8 @@ footer a {
   .parc_longchamp {
     height: 200px;
   }
+  /* ------------FOOTER TABLETTE--------------------------- */
   footer {
-    flex-direction: column;
     width: 100%;
   }
   footer ul {
@@ -515,41 +535,44 @@ footer a {
 
 /* ---------------------------------------------------Mobile------------------------------------------------- */
 @media screen and (max-width: 767px) {
+  /* -------------HEADER MOBILE------------------------------- */
   header {
     margin: 0;
     width: 100%;
   }
-  .logo {
+  .header_logo {
     flex-direction: column;
     align-items: center;
   }
-  .logo img {
+  .header_logo img {
     height: 40px;
     width: 60px;
     margin-top: 10px;
   }
-  .link_header {
+  .header_nav {
     width: 100%;
     margin-top: 10px;
   }
-  .link_header li {
+  .header_nav li {
     height: 40px;
     width: 50%;
     text-align: center;
-    border-bottom: 2px solid #f2f2f2;
+    border-bottom: 2px solid var(--second-color);
   }
-  .link_header a {
+  .header_nav a {
     line-height: 40px;
     margin: 0;
   }
-  .link_header li:hover {
+  .header_nav li:hover {
     border-top: none;
-    border-bottom: 2px solid #0065fc;
+    border-bottom: 2px solid var(--main-color);
   }
-  .header_title {
+  /* -------------------MAIN MOBILE-------------------------- */
+  .zero_title {
     margin-right: 10px;
     margin-left: 20px;
   }
+  /* -----------FORMULAIRE MOBILE----------------------- */
   form {
     text-align: center;
   }
@@ -559,7 +582,7 @@ footer a {
   }
   #search_button {
     padding: 10px 12px;
-    border-radius: 10px;
+    border-radius: 12px;
     position: relative;
     right: 20px;
   }
@@ -572,14 +595,9 @@ footer a {
   #search_button i {
     display: initial;
     padding: 0;
-    background-color: #0065fc;
-    /* color: white;
-    position: relative;
-    border-radius: 10px;
-    padding: 13px;
-    right: 3px;  */
+    background-color: var(--main-color);
   }
-
+  /* -------------------FILTER MOBILE------------------------------- */
   #filter_title {
     display: flex;
     width: 90%;
@@ -592,6 +610,7 @@ footer a {
     padding: 0 15px 0 0;
     margin: 10px 0 0 20px;
   }
+  /* --------INFO MOBILE---------------- */
   .info {
     display: flex;
   }
@@ -601,21 +620,32 @@ footer a {
   .info span {
     margin-left: 10px;
   }
+  /* ---------------MAIN MOBILE------------------- */
   main {
+    margin: 0;
+  }
+  .zero {
+    margin: 0;
+  }
+  /* --------------HERBERGEMENTS MOBILE--------------------- */
+  .marseille_hotels {
     flex-direction: column;
     margin: 0;
     width: 100%;
   }
-  aside {
+  #ancre1 {
+    padding-left: 5px;
+  }
+  .plus_populaires {
     order: 1;
     margin-top: 20px;
     padding-top: 30px;
     border-radius: 0;
   }
-  .aside_title {
+  .plus_populaires_title {
     padding-right: 10px;
   }
-  aside img {
+  .plus_populaires img {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -625,9 +655,6 @@ footer a {
     background-color: initial;
     margin-top: 20px;
     border-radius: 0;
-  }
-  #ancre1 {
-    padding-left: 5px;
   }
   .hotel {
     width: 100%;
@@ -641,9 +668,13 @@ footer a {
   .icon {
     padding-left: 15px;
   }
-  #activity_marseille {
+  /* -------------ACTIVITES MOBILE----------------------- */
+  .activity_marseille {
     margin: 0;
     width: 100%;
+  }
+  #ancre2 {
+    margin-left: 20px;
   }
   .photo {
     flex-direction: column;
@@ -659,9 +690,6 @@ footer a {
     height: 400px;
     margin-left: 20px;
     margin-right: 20px;
-  }
-  #ancre2 {
-    margin-left: 20px;
   }
   #vieux_port,
   #fort,
@@ -685,6 +713,7 @@ footer a {
   .parc_longchamp {
     height: 200px;
   }
+  /* -----------------FOOTER MOBILE--------------------- */
   footer {
     flex-direction: column;
     width: 100%;
